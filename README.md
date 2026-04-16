@@ -68,7 +68,6 @@
 |---|---|
 | Frontend | React.js, Tailwind CSS |
 | AI Chatbot | Google Gemini API |
-| Deployment | Netlify |
 | Backend | Node.js / Python |
 | Database | MongoDB / Firebase |
 
