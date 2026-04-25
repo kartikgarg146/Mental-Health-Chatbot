@@ -48,7 +48,7 @@ const counsellors = [
     rating: 4.7,
     experience: '15+ years',
     description: 'Anxiety, depression, and relationship counseling.',
-    availability: ['9:30 AM', '12:00 PM', '2:30 PM', '4:30 PM'],
+    availability: ['9:30 AM', '12:00 PM', '4:30 PM'],
     imageUrl: 'https://lagracecenter.com/wp-content/uploads/2023/03/dr-alok-pandey.jpg'
   },
   {
@@ -58,7 +58,7 @@ const counsellors = [
     rating: 4.6,
     experience: '12+ years',
     description: 'Academic stress, career guidance, and anxiety.',
-    availability: ['10:00 AM', '1:00 PM', '3:00 PM', '5:00 PM'],
+    availability: ['10:00 AM', '1:00 PM', '5:00 PM'],
     imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQGbHo6QL0_vWw/profile-displayphoto-shrink_200_200/B56ZOrFxFTGkAc-/0/1733742236676?e=2147483647&v=beta&t=wZOhm5Cvobj7ByKUqClFK3QHOvAbxMja2u4dolgzoXM'
   },
   {
@@ -68,7 +68,7 @@ const counsellors = [
     rating: 4.8,
     experience: '10+ years',
     description: 'Cognitive behavioral therapy, mindfulness, anxiety management.',
-    availability: ['9:00 AM', '11:30 AM', '2:00 PM', '4:00 PM'],
+    availability: ['9:00 AM', '2:00 PM', '4:00 PM'],
     imageUrl: 'https://anvayahealthcare.com/wp-content/uploads/elementor/thumbs/manish-kumar-clinical-psychologist-rarxtgkntou51twhqxojl07izmcfvaucuyd4f3ojns.webp'
   },
   {
@@ -78,7 +78,7 @@ const counsellors = [
     rating: 4.7,
     experience: '30+ years',
     description: 'Mood disorders, PTSD, and autism spectrum disorders.',
-    availability: ['9:00 AM', '12:00 PM', '3:00 PM', '5:00 PM'],
+    availability: ['9:00 AM', '12:00 PM', '3:00 PM'],
     imageUrl: 'https://images.apollo247.in/pd-cms/cms/2025-09/fa311ee5-1ebf-4291-a69b-59db07e5bff3.jpg'
   },
   {
