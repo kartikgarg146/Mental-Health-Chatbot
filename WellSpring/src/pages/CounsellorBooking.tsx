@@ -28,7 +28,7 @@ const counsellors = [
     rating: 4.9,
     experience: '25+ years',
     description: 'Stress, anxiety, and holistic mental health.',
-    availability: ['9:00 AM', '11:00 AM', '2:00 PM', '4:00 PM'],
+    availability: ['9:00 AM', '2:00 PM', '4:00 PM'],
     imageUrl: 'https://www.shyambhat.com/wp-content/uploads/2018/10/ShyamBhat1-4.jpg'
   },
   {

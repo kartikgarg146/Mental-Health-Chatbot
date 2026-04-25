@@ -42,7 +42,7 @@ const BooksHub: React.FC = () => {
       audioLink: "https://open.spotify.com/show/6nvp4fZgOxSZYdLCRfQSiz",
       imageUrl:
         "https://youaligned.com/wp-content/uploads/2022/09/the-power-of-now-featured.jpg",
-      rating: 4.8,
+      rating: 4.9,
     },
     {
       id: "2",
@@ -56,7 +56,7 @@ const BooksHub: React.FC = () => {
       audioLink: "https://open.spotify.com/show/1IoRb7aM7p7tKObpxpf6TO",
       imageUrl:
         "https://miro.medium.com/v2/resize:fit:1200/1*yPTgWvFZ_jy7rsscgNrTkA.jpeg",
-      rating: 4.9,
+      rating: 4.8,
     },
     {
       id: "3",
@@ -69,7 +69,7 @@ const BooksHub: React.FC = () => {
         "https://cdn.bookey.app/files/pdf/book/en/the-anxiety-solution.pdf",
       imageUrl:
         "https://tse4.mm.bing.net/th/id/OIP.lJHOu8ABr4zupZGwnPemrwAAAA?pid=ImgDet&w=178&h=251&c=7&dpr=1.5&o=7&rm=3",
-      rating: 4.6,
+      rating: 4.7,
     },
     {
       id: "4",

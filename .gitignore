@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 WellSpring/node_modules/
 WellSpring/backend/.venv/
@@ -14,6 +15,20 @@ __pycache__/
 # Build outputs
 WellSpring/dist/
 WellSpring/dist-ssr/
+=======
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+>>>>>>> bc7fe82c374f81334fadac7beeacaf2c6f009666
 *.local
 
 # Editor directories and files
@@ -26,6 +41,7 @@ WellSpring/dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 # Logs
 logs
@@ -35,3 +51,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+=======
+.env
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+>>>>>>> bc7fe82c374f81334fadac7beeacaf2c6f009666
