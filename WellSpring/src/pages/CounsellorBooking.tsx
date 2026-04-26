@@ -88,7 +88,7 @@ const counsellors = [
     rating: 4.6,
     experience: '15+ years',
     description: 'Depression, anxiety, and relationship counseling.',
-    availability: ['10:00 AM', '12:30 PM', '2:30 PM', '4:30 PM'],
+    availability: ['10:00 AM', '12:30 PM', '2:30 PM'],
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Rmu_8cB2NVk1rYDNgN-G8soZc2sSnHLddQ&s'
   },
   {
@@ -98,7 +98,7 @@ const counsellors = [
     rating: 4.9,
     experience: '10+ years',
     description: 'Trauma, grief, and emotional well-being.',
-    availability: ['9:30 AM', '11:30 AM', '2:00 PM', '4:00 PM'],
+    availability: ['9:30 AM', '11:30 AM', '4:00 PM'],
     imageUrl: 'https://res.cloudinary.com/mansi-cdn/image/upload/f_auto/q_auto/CDN/img/Banner%20Phone%203.png'
   },
   {
@@ -108,7 +108,7 @@ const counsellors = [
     rating: 4.7,
     experience: '18+ years',
     description: 'Workplace stress, corporate counseling, emotional intelligence.',
-    availability: ['10:00 AM', '12:00 PM', '3:00 PM', '5:00 PM'],
+    availability: ['10:00 AM', '3:00 PM', '5:00 PM'],
     imageUrl: 'https://www.myhospitalnow.com/doctors/storage/users/Dr.-Nitin-Seth-768x1151-362931280_1753505960.jpg'
   },
   {
@@ -118,7 +118,7 @@ const counsellors = [
     rating: 4.6,
     experience: '12+ years',
     description: 'Anxiety, depression, cognitive behavioral therapy.',
-    availability: ['9:00 AM', '11:00 AM', '2:00 PM', '4:00 PM'],
+    availability: ['11:00 AM', '2:00 PM', '4:00 PM'],
     imageUrl: 'https://www.womensworldbanking.org/wp-content/uploads/2023/04/Copy-of-Seema-Image.jpg'
   }
 ];
