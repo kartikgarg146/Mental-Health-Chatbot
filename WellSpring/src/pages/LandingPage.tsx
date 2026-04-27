@@ -149,7 +149,7 @@ const LandingPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold">Need a Friend</h3>
-                <p className="text-gray-600">A quick sentiment-aware chat assistant to help you reflect and feel heard.</p>
+                <p className="text-gray-600">A quick sentiment-aware chat assistant to help you feel heard.</p>
                 <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Open</button>
               </div>
             </motion.div>
