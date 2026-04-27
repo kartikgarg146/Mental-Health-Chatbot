@@ -171,7 +171,7 @@ const LandingPage: React.FC = () => {
               Why Choose WellSpring
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing a safe, secure, and supportive environment for your mental health journey
+              We're committed to providing a safe, secure, and supportive environment for your mental health journey.
             </p>
           </motion.div>
 
