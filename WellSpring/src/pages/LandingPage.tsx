@@ -33,8 +33,14 @@ const LandingPage: React.FC = () => {
           transition={{ duration: 1.2 }}
           className="flex items-center gap-4 mb-8"
         >
-          <Heart className="w-16 h-16 text-pink-400 fill-pink-300 drop-shadow-lg" />
-          <p className="text-lg md:text-xl text-gray-700 font-medium max-w-3xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-300 to-rose-400 flex items-center justify-center shadow-2xl"
+          >
+            <Heart className="w-12 h-12 text-white fill-white" />
+          </motion.div>
+          <p className="text-lg md:text-xl text-gray-700 font-medium max-w-3xl leading-relaxed">
             "Time will heal everything, and you are tougher than you think."
           </p>
         </motion.div>
@@ -46,7 +52,7 @@ const LandingPage: React.FC = () => {
           className="z-10 text-center mt-8"
         >
           <h1
-            className="text-6xl md:text-7xl font-extrabold text-gray-800"
+            className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800"
             style={{ fontFamily: "'Playfair Display', serif", lineHeight: 1 }}
           >
             WellSpring
@@ -58,19 +64,23 @@ const LandingPage: React.FC = () => {
             "Peace begins with a smile, and every smile makes you stronger."
           </p>
 
-          <div className="mt-10 flex gap-6 justify-center">
-            <button
+          <div className="mt-10 flex gap-6 justify-center flex-wrap">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/student-auth")}
-              className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-10 py-3 rounded-full text-lg shadow-lg transform transition hover:scale-105"
+              className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-12 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold"
             >
               Student Portal
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/counsellor-auth")}
-              className="bg-gradient-to-r from-emerald-500 to-green-500 text-white px-10 py-3 rounded-full text-lg shadow-lg transform transition hover:scale-105"
+              className="bg-gradient-to-r from-emerald-500 to-green-500 text-white px-12 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold"
             >
               Counsellor Portal
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </section>
@@ -84,18 +94,18 @@ const LandingPage: React.FC = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1.2 }}
-          className="relative z-10 text-center px-6 max-w-5xl"
+          className="relative z-10 text-center px-6 max-w-5xl bg-white/10 backdrop-blur-md rounded-3xl p-12 shadow-2xl border border-white/20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-white drop-shadow-2xl mb-6">
             A Moment of Reflection
           </h2>
-          <p className="text-lg md:text-xl text-white/90">
+          <p className="text-lg md:text-2xl text-white/95 leading-relaxed">
             Breathe, notice, and take one small step. Healing is a process — we walk with you.
           </p>
         </motion.div>
@@ -109,16 +119,16 @@ const LandingPage: React.FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2 }}
-            className="text-4xl font-semibold text-gray-800 mb-10"
+            className="text-4xl md:text-5xl font-semibold text-gray-800 mb-16 text-center"
           >
             Curated Resources
           </motion.h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[ 
-              { icon: <BookOpen className="w-10 h-10 text-emerald-500 mx-auto mb-4" />, title: "Books", desc: "Hand-picked reads to inspire growth and healing." },
-              { icon: <Video className="w-10 h-10 text-sky-500 mx-auto mb-4" />, title: "TED Talks", desc: "Talks from experts to fuel positivity and resilience." },
-              { icon: <Sparkles className="w-10 h-10 text-pink-400 mx-auto mb-4" />, title: "Daily Tips", desc: "Small steps and nudges to stay motivated every day." },
-              { icon: <Mic className="w-10 h-10 text-purple-600 mx-auto mb-4" />, title: "Podcasts", desc: "Listen to inspiring voices that guide and motivate you." },
+              { icon: <BookOpen className="w-12 h-12 text-emerald-500 mx-auto mb-4" />, title: "Books", desc: "Hand-picked reads to inspire growth and healing." },
+              { icon: <Video className="w-12 h-12 text-sky-500 mx-auto mb-4" />, title: "TED Talks", desc: "Talks from experts to fuel positivity and resilience." },
+              { icon: <Sparkles className="w-12 h-12 text-pink-400 mx-auto mb-4" />, title: "Daily Tips", desc: "Small steps and nudges to stay motivated every day." },
+              { icon: <Mic className="w-12 h-12 text-purple-600 mx-auto mb-4" />, title: "Podcasts", desc: "Listen to inspiring voices that guide and motivate you." },
             ].map((c, i) => (
               <motion.div
                 key={i}
@@ -126,31 +136,39 @@ const LandingPage: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.2, delay: i * 0.2 }}
-                className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-transform hover:-translate-y-2 text-center"
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="p-8 bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 text-center border border-white/50"
               >
                 {c.icon}
-                <h3 className="font-semibold mb-2">{c.title}</h3>
-                <p className="text-gray-600 text-sm">{c.desc}</p>
+                <h3 className="font-semibold text-xl mb-3">{c.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Need a Friend Chatbot */}
-          <div className="mt-12 grid md:grid-cols-2 gap-8 items-center">
+          <div className="mt-16 grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ y: 60, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.2 }}
-              className="p-8 bg-white rounded-xl shadow-lg flex items-center gap-6 hover:-translate-y-2 transform transition"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="p-10 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl flex items-center gap-8 hover:shadow-3xl transform transition-all duration-300 border border-white/60"
             >
-              <div className="w-20 h-20 rounded-full bg-pink-50 flex items-center justify-center">
-                <Heart className="w-10 h-10 text-pink-400" />
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-100 to-rose-200 flex items-center justify-center shadow-lg">
+                <Heart className="w-12 h-12 text-pink-500" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Need a Friend</h3>
-                <p className="text-gray-600">A quick sentiment-aware chat assistant to help you feel heard.</p>
-                <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Open</button>
+                <h3 className="text-2xl font-semibold mb-2">Need a Friend</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">A quick sentiment-aware chat assistant to help you feel heard.</p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                >
+                  Open
+                </motion.button>
               </div>
             </motion.div>
           </div>
@@ -165,24 +183,24 @@ const LandingPage: React.FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-serif">
+            <h2 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600 mb-8 font-serif">
               Why Choose WellSpring
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               We're committed to providing a safe, secure, and supportive environment for your mental health journey.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[ 
-              { icon: <Shield className="w-8 h-8 text-blue-600" />, title: "Privacy First", desc: "Your privacy is paramount.", bgColor: "bg-blue-100" },
-              { icon: <Lock className="w-8 h-8 text-green-600" />, title: "Secure Conversations", desc: "Encrypted end-to-end.", bgColor: "bg-green-100" },
-              { icon: <UserCheck className="w-8 h-8 text-purple-600" />, title: "Expert Support", desc: "Licensed professionals ready to help.", bgColor: "bg-purple-100" },
-              { icon: <Sparkles className="w-8 h-8 text-orange-600" />, title: "Holistic Approach", desc: "Therapy + community + tools.", bgColor: "bg-orange-100" },
-              { icon: <Lock className="w-8 h-8 text-red-600" />, title: "End-to-End Encryption", desc: "Military-grade secure.", bgColor: "bg-red-100" },
-              { icon: <Target className="w-8 h-8 text-teal-600" />, title: "Our Mission", desc: "Accessible mental health support.", bgColor: "bg-teal-100" },
+              { icon: <Shield className="w-10 h-10 text-blue-600" />, title: "Privacy First", desc: "Your privacy is paramount.", bgColor: "bg-blue-100" },
+              { icon: <Lock className="w-10 h-10 text-green-600" />, title: "Secure Conversations", desc: "Encrypted end-to-end.", bgColor: "bg-green-100" },
+              { icon: <UserCheck className="w-10 h-10 text-purple-600" />, title: "Expert Support", desc: "Licensed professionals ready to help.", bgColor: "bg-purple-100" },
+              { icon: <Sparkles className="w-10 h-10 text-orange-600" />, title: "Holistic Approach", desc: "Therapy + community + tools.", bgColor: "bg-orange-100" },
+              { icon: <Lock className="w-10 h-10 text-red-600" />, title: "End-to-End Encryption", desc: "Military-grade secure.", bgColor: "bg-red-100" },
+              { icon: <Target className="w-10 h-10 text-teal-600" />, title: "Our Mission", desc: "Accessible mental health support.", bgColor: "bg-teal-100" },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -190,13 +208,14 @@ const LandingPage: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.2, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 transform transition"
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="bg-white/80 backdrop-blur-lg p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50"
               >
-                <div className={`w-16 h-16 mb-6 ${feature.bgColor} rounded-full flex items-center justify-center`}>
+                <div className={`w-20 h-20 mb-8 ${feature.bgColor} rounded-2xl flex items-center justify-center shadow-lg`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+                <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -211,21 +230,21 @@ const LandingPage: React.FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 font-serif">
+            <h2 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600 mb-8 font-serif">
               Join Our Community
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Connect with others on similar journeys, participate in healing activities, and grow together in a supportive environment
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[ 
-              { icon: <Users className="w-12 h-12 text-indigo-600" />, title: "Peer Support Groups", desc: "Share and connect with peers.", gradient: "from-blue-100 to-indigo-100" },
-              { icon: <Calendar className="w-12 h-12 text-emerald-600" />, title: "Events & Workshops", desc: "Participate in wellness events.", gradient: "from-green-100 to-emerald-100" },
-              { icon: <PenTool className="w-12 h-12 text-rose-600" />, title: "Guided Journals", desc: "Structured journaling prompts.", gradient: "from-pink-100 to-rose-100" },
+              { icon: <Users className="w-14 h-14 text-indigo-600" />, title: "Peer Support Groups", desc: "Share and connect with peers.", gradient: "from-blue-100 to-indigo-100" },
+              { icon: <Calendar className="w-14 h-14 text-emerald-600" />, title: "Events & Workshops", desc: "Participate in wellness events.", gradient: "from-green-100 to-emerald-100" },
+              { icon: <PenTool className="w-14 h-14 text-rose-600" />, title: "Guided Journals", desc: "Structured journaling prompts.", gradient: "from-pink-100 to-rose-100" },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -233,13 +252,14 @@ const LandingPage: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.2, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 transform transition text-center"
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="bg-white/80 backdrop-blur-lg p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 text-center border border-white/50"
               >
-                <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${feature.gradient} rounded-full flex items-center justify-center`}>
+                <div className={`w-24 h-24 mx-auto mb-8 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
                   {feature.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -247,17 +267,23 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-gradient-to-br from-[#f0f4f7] via-[#fff6f6] to-[#f9fdfb]">
+      <footer className="py-20 bg-gradient-to-br from-[#f0f4f7] via-[#fff6f6] to-[#f9fdfb]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2 }}
-            className="flex items-center justify-center gap-4 mb-8"
+            className="flex items-center justify-center gap-4 mb-10"
           >
-            <Heart className="w-8 h-8 text-pink-500" />
-            <h3 className="text-3xl font-bold font-serif text-gray-800">WellSpring</h3>
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center shadow-lg"
+            >
+              <Heart className="w-6 h-6 text-white fill-white" />
+            </motion.div>
+            <h3 className="text-4xl font-bold font-serif text-gray-800">WellSpring</h3>
           </motion.div>
 
           <motion.div
@@ -265,10 +291,17 @@ const LandingPage: React.FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="flex flex-wrap justify-center gap-8 mb-8"
+            className="flex flex-wrap justify-center gap-10 mb-10"
           >
             {["About", "Privacy", "Help", "Contact", "Terms"].map((link, i) => (
-              <a key={i} href="#" className="text-gray-600 hover:text-gray-800 transition font-medium">{link}</a>
+              <motion.a
+                key={i}
+                href="#"
+                whileHover={{ scale: 1.1 }}
+                className="text-gray-600 hover:text-gray-800 transition font-medium text-lg"
+              >
+                {link}
+              </motion.a>
             ))}
           </motion.div>
           <motion.p
@@ -276,11 +309,11 @@ const LandingPage: React.FC = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.2, delay: 0.2 }}
-            className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed"
+            className="text-gray-500 text-base max-w-3xl mx-auto leading-relaxed mb-4"
           >
             WellSpring is committed to providing accessible mental health resources and support. If you're in crisis, please contact emergency services or a crisis helpline immediately.
           </motion.p>
-          <p className="text-gray-400 text-xs mt-2">© 2026 WellSpring. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2026 WellSpring. All rights reserved.</p>
         </div>
       </footer>
     </div>
