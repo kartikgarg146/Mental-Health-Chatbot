@@ -22,16 +22,27 @@ const LandingPage: React.FC = () => {
   const heroImage =
     "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
+  const heroBackgroundImage =
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
   return (
     <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfdf5]">
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+      <section
+        className="relative w-full h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-indigo-800/30 to-cyan-800/40" />
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="flex items-center gap-4 mb-8"
+          className="flex items-center gap-4 mb-8 relative z-10"
         >
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
@@ -49,16 +60,16 @@ const LandingPage: React.FC = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
-          className="z-10 text-center mt-8"
+          className="z-10 text-center mt-8 relative"
         >
           <h1
-            className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800"
+            className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-white drop-shadow-2xl"
             style={{ fontFamily: "'Playfair Display', serif", lineHeight: 1 }}
           >
             WellSpring
           </h1>
           <p
-            className="mt-6 text-xl md:text-2xl italic text-gray-700 max-w-2xl mx-auto"
+            className="mt-6 text-xl md:text-2xl italic text-white/95 max-w-2xl mx-auto drop-shadow-lg"
             style={{ fontFamily: "'Dancing Script', cursive" }}
           >
             "Peace begins with a smile, and every smile makes you stronger."
