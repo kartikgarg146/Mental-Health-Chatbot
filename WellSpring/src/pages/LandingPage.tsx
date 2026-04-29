@@ -23,7 +23,7 @@ const LandingPage: React.FC = () => {
     "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-[#a3d5d3] via-[#fff6f0] to-[#f9fdfb]">
+    <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-[#e0f2fe] via-[#f0f9ff] to-[#ecfdf5]">
 
       {/* Hero Section */}
       <section className="relative w-full h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
@@ -94,7 +94,7 @@ const LandingPage: React.FC = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-indigo-800/40 to-cyan-800/50 backdrop-blur-sm" />
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -112,7 +112,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Curated Resources Section */}
-      <section className="py-24 min-h-screen bg-gradient-to-br from-[#fffaf6] via-[#f6f8ff] to-[#f2fff6]">
+      <section className="py-24 min-h-screen bg-gradient-to-br from-[#fef3c7] via-[#f0f9ff] to-[#ecfdf5]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
             initial={{ y: 60, opacity: 0 }}
@@ -176,7 +176,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 min-h-screen bg-gradient-to-br from-[#f0f4f7] via-[#fff6f6] to-[#f9fdfb]">
+      <section className="py-24 min-h-screen bg-gradient-to-br from-[#f0f9ff] via-[#fef3c7] to-[#ecfdf5]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ y: 60, opacity: 0 }}
@@ -223,7 +223,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Community Section */}
-      <section className="py-24 min-h-screen bg-gradient-to-br from-[#f0f4f7] via-[#f2f9f2] to-[#f9fdfb]">
+      <section className="py-24 min-h-screen bg-gradient-to-br from-[#f0f9ff] via-[#ecfdf5] to-[#fef3c7]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ y: 60, opacity: 0 }}
@@ -267,7 +267,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 bg-gradient-to-br from-[#f0f4f7] via-[#fff6f6] to-[#f9fdfb]">
+      <footer className="py-20 bg-gradient-to-br from-[#f0f9ff] via-[#ecfdf5] to-[#fef3c7]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 40, opacity: 0 }}
