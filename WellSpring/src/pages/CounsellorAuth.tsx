@@ -32,27 +32,27 @@ const CounsellorAuth: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_24%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.14),_transparent_24%),linear-gradient(180deg,#ecfdf5_0%,#dbeafe_48%,#e0f2fe_100%)] flex items-center justify-center p-6 overflow-hidden">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.2),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.18),_transparent_26%),linear-gradient(180deg,#020617_0%,#09142c_40%,#0c1f3d_100%)] flex items-center justify-center p-6 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute left-10 top-10 h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl" />
-        <div className="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-sky-400/10 blur-3xl" />
+        <div className="absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-emerald-400/15 blur-3xl" />
+        <div className="absolute right-10 bottom-20 h-72 w-72 rounded-full bg-teal-400/15 blur-3xl" />
       </div>
       <div className="relative w-full max-w-md z-10">
         <button
           onClick={() => navigate('/')}
-          className="flex items-center text-slate-700 hover:text-teal-600 mb-8 transition-colors duration-200"
+          className="flex items-center text-slate-200 hover:text-emerald-300 mb-8 transition-colors duration-200"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
           Back to Home
         </button>
 
-        <div className="relative bg-white/85 border border-white/60 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-emerald-500/10 p-8">
+        <div className="relative bg-slate-950/85 border border-white/10 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-emerald-500/10 p-8">
           <div className="text-center mb-8">
-            <Users className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-semibold text-slate-900 mb-2">
+            <Users className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
+            <h2 className="text-3xl font-semibold text-white mb-2">
               {isLogin ? 'Counsellor Portal' : 'Join as Counsellor'}
             </h2>
-            <p className="text-slate-600">
+            <p className="text-slate-300">
               {isLogin ? 'Help students on their wellness journey' : 'Become a wellness guide'}
             </p>
           </div>
@@ -66,7 +66,7 @@ const CounsellorAuth: React.FC = () => {
                   placeholder="Professional Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-slate-100/90 border border-slate-200 text-slate-900 placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
+                  className="w-full pl-12 pr-4 py-3 bg-slate-900/60 border border-slate-700 text-white placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
                   required={!isLogin}
                 />
               </div>
@@ -79,7 +79,7 @@ const CounsellorAuth: React.FC = () => {
                 placeholder="Professional Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-slate-100/90 border border-slate-200 text-slate-900 placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
+                className="w-full pl-12 pr-4 py-3 bg-slate-900/60 border border-slate-700 text-white placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
                 required
               />
             </div>
@@ -91,7 +91,7 @@ const CounsellorAuth: React.FC = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-slate-100/90 border border-slate-200 text-slate-900 placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
+                className="w-full pl-12 pr-4 py-3 bg-slate-900/60 border border-slate-700 text-white placeholder-slate-500 rounded-3xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200"
                 required
               />
             </div>
@@ -99,7 +99,7 @@ const CounsellorAuth: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 rounded-3xl font-semibold transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-[0_18px_50px_-20px_rgba(16,185,129,0.8)] disabled:bg-slate-400 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-3 rounded-3xl font-semibold transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-[0_18px_50px_-20px_rgba(16,185,129,0.8)] disabled:bg-slate-600 disabled:cursor-not-allowed"
             >
               {loading ? 'Please wait...' : (isLogin ? 'Access Portal' : 'Join Platform')}
             </button>
@@ -108,7 +108,7 @@ const CounsellorAuth: React.FC = () => {
           <div className="text-center mt-6">
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-emerald-600 hover:text-teal-600 font-medium transition-colors duration-200"
+              className="text-emerald-300 hover:text-emerald-100 font-medium transition-colors duration-200"
             >
               {isLogin ? "New counsellor? Join us" : "Already registered? Sign in"}
             </button>
