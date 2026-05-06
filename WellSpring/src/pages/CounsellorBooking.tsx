@@ -134,16 +134,20 @@ const counsellors = [
 
   if (isBooked) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-green-500 opacity-95 font-[Poppins]">
-        <div className="text-center">
-          <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Booking Confirmed!</h2>
-          <p className="text-gray-600 mb-6">Your anonymous session has been scheduled successfully.</p>
-          <div className="bg-white/80 p-6 rounded-2xl shadow-lg max-w-md mx-auto">
-            <h3 className="font-semibold text-gray-800 mb-2">Session Details:</h3>
-            <p className="text-gray-600">Counsellor: {selectedCounsellor?.name}</p>
-            <p className="text-gray-600">Time: {selectedSlot}</p>
-            <p className="text-gray-600">Your ID: Anonymous Student #{Math.random().toString(36).substr(2, 6).toUpperCase()}</p>
+      <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(6,182,212,0.2),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.15),_transparent_26%),linear-gradient(180deg,#020617_0%,#09142c_40%,#0c1f3d_100%)] flex items-center justify-center font-[Poppins] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-emerald-400/15 blur-3xl" />
+          <div className="absolute right-10 bottom-20 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl" />
+        </div>
+        <div className="relative text-center max-w-md mx-auto px-6">
+          <CheckCircle className="w-24 h-24 text-emerald-400 mx-auto mb-6" />
+          <h2 className="text-4xl font-bold text-white mb-4">Booking Confirmed!</h2>
+          <p className="text-slate-300 mb-8">Your anonymous session has been scheduled successfully.</p>
+          <div className="bg-slate-900/80 border border-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-2xl shadow-emerald-500/10">
+            <h3 className="font-semibold text-white mb-4">Session Details:</h3>
+            <p className="text-slate-300 mb-2">Counsellor: {selectedCounsellor?.name}</p>
+            <p className="text-slate-300 mb-2">Time: {selectedSlot}</p>
+            <p className="text-slate-300">Your ID: Anonymous Student #{Math.random().toString(36).substr(2, 6).toUpperCase()}</p>
           </div>
         </div>
       </div>
@@ -151,55 +155,55 @@ const counsellors = [
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-green-500 opacity-95 ">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0f9ff] via-[#ecfdf5] to-[#fef3c7]">
       <StudentNavbar activeSection="booking" setActiveSection={() => {}} />
       
       <main className="max-w-7xl mx-auto px-6 py-10">
         {/* Header */}
-        <div className="flex items-center mb-10">
+        <div className="flex items-center mb-12">
           <button
             onClick={() => navigate('/student-dashboard')}
-            className="flex items-center text-gray-600 hover:text-blue-500 mr-6 transition-all duration-200"
+            className="flex items-center text-slate-600 hover:text-cyan-500 mr-6 transition-all duration-200"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Dashboard
           </button>
           <div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-2 tracking-wide">Book a Counsellor</h1>
-            <p className="text-gray-600 text-lg font-semi-bold">Choose a counsellor for anonymous, confidential support</p>
+            <h1 className="text-5xl font-bold text-gray-800 mb-2 tracking-wide">Book a Counsellor</h1>
+            <p className="text-gray-600 text-lg font-medium">Choose a counsellor for anonymous, confidential support</p>
           </div>
         </div>
 
         {!selectedCounsellor ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {counsellors.map((counsellor) => (
-              <div key={counsellor.id} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02]">
-                <div className="p-6">
-                  <div className="flex items-start mb-4">
+              <div key={counsellor.id} className="bg-white/85 border border-white/60 backdrop-blur-xl rounded-[2rem] shadow-xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 transform hover:-translate-y-2">
+                <div className="p-8">
+                  <div className="flex items-start mb-6">
                     <img
                       src={counsellor.imageUrl}
                       alt="Counsellor"
-                      className="w-20 h-20 rounded-full object-cover mr-4 border-2 border-blue-100"
+                      className="w-20 h-20 rounded-full object-cover mr-4 border-3 border-cyan-200 shadow-lg"
                     />
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-gray-800 mb-1">{counsellor.name}</h3>
-                      <p className="text-blue-600 font-medium mb-2">{counsellor.specialty}</p>
+                      <p className="text-cyan-600 font-medium mb-2">{counsellor.specialty}</p>
                       <div className="flex items-center">
-                        <Star className="w-4 h-4 text-yellow-500 mr-1" />
+                        <Star className="w-4 h-4 text-amber-400 mr-1" />
                         <span className="text-sm text-gray-600">{counsellor.rating} • {counsellor.experience}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed">{counsellor.description}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{counsellor.description}</p>
                   
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500 font-medium">
                       {counsellor.availability.length} slots available
                     </div>
                     <button
                       onClick={() => setSelectedCounsellor(counsellor)}
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg"
+                      className="bg-gradient-to-r from-cyan-500 to-sky-500 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(6,182,212,0.6)] shadow-lg"
                     >
                       Book Session
                     </button>
@@ -210,28 +214,28 @@ const counsellors = [
           </div>
         ) : (
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8">
-              <div className="text-center mb-8">
+            <div className="bg-white/85 border border-white/60 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-cyan-500/10 p-10">
+              <div className="text-center mb-10">
                 <img
                   src={selectedCounsellor.imageUrl}
                   alt="Counsellor"
-                  className="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-2 border-blue-100"
+                  className="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-4 border-cyan-200 shadow-lg"
                 />
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">{selectedCounsellor.name}</h2>
-                <p className="text-blue-600 font-medium">{selectedCounsellor.specialty}</p>
+                <h2 className="text-3xl font-bold text-gray-800 mb-3">{selectedCounsellor.name}</h2>
+                <p className="text-cyan-600 font-semibold text-lg">{selectedCounsellor.specialty}</p>
               </div>
 
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Select a Time Slot</h3>
-                <div className="grid grid-cols-2 gap-3">
+              <div className="mb-10">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">Select a Time Slot</h3>
+                <div className="grid grid-cols-2 gap-4">
                   {selectedCounsellor.availability.map((slot) => (
                     <button
                       key={slot}
                       onClick={() => setSelectedSlot(slot)}
-                      className={`p-3 rounded-lg border-2 transition-all duration-200 text-gray-700 font-medium ${
+                      className={`p-4 rounded-2xl border-2 transition-all duration-200 font-semibold ${
                         selectedSlot === slot
-                          ? 'border-blue-500 bg-blue-100 text-blue-700'
-                          : 'border-gray-300 hover:border-blue-300 hover:bg-gray-50'
+                          ? 'border-cyan-400 bg-gradient-to-r from-cyan-50 to-sky-50 text-cyan-700'
+                          : 'border-slate-200 text-gray-700 hover:border-cyan-300 hover:bg-slate-50'
                       }`}
                     >
                       <Clock className="w-4 h-4 inline mr-2" />
@@ -241,9 +245,9 @@ const counsellors = [
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-4 rounded-xl mb-6 border-l-4 border-blue-400">
-                <h4 className="font-semibold text-blue-800 mb-2">Privacy Notice</h4>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gradient-to-r from-cyan-50 to-sky-50 p-6 rounded-2xl mb-8 border border-cyan-200">
+                <h4 className="font-semibold text-cyan-800 mb-2">Privacy Notice</h4>
+                <p className="text-cyan-700 text-sm leading-relaxed">
                   Your identity will remain completely anonymous. The counsellor will only see your wellness progress and session notes, never your personal information.
                 </p>
               </div>
@@ -251,14 +255,14 @@ const counsellors = [
               <div className="flex space-x-4">
                 <button
                   onClick={() => setSelectedCounsellor(null)}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-xl font-medium transition-all duration-200"
+                  className="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 py-3 rounded-full font-semibold transition-all duration-200"
                 >
                   Back to List
                 </button>
                 <button
                   onClick={handleBooking}
                   disabled={!selectedSlot}
-                  className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white py-3 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
+                  className="flex-1 bg-gradient-to-r from-cyan-500 to-sky-500 text-white py-3 rounded-full font-semibold transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-[0_18px_50px_-20px_rgba(6,182,212,0.8)] disabled:bg-slate-400 disabled:cursor-not-allowed shadow-lg"
                 >
                   Confirm Booking
                 </button>
