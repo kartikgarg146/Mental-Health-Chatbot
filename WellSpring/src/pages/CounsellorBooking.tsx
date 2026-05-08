@@ -160,17 +160,23 @@ const counsellors = [
       
       <main className="max-w-7xl mx-auto px-6 py-10">
         {/* Header */}
-        <div className="flex items-center mb-12">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between mb-12">
           <button
             onClick={() => navigate('/student-dashboard')}
-            className="flex items-center text-slate-600 hover:text-cyan-500 mr-6 transition-all duration-200"
+            className="inline-flex items-center text-slate-700 hover:text-sky-600 transition-all duration-200 font-medium"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Dashboard
           </button>
-          <div>
-            <h1 className="text-5xl font-bold text-gray-800 mb-2 tracking-wide">Book a Counsellor</h1>
-            <p className="text-gray-600 text-lg font-medium">Choose a counsellor for anonymous, confidential support</p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <div>
+              <h1 className="text-5xl font-bold text-slate-900 mb-2 tracking-tight">Book a Counsellor</h1>
+              <p className="text-slate-600 text-lg">Choose a counsellor for anonymous, confidential support</p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-cyan-700 font-semibold shadow-sm">
+              <Calendar className="w-4 h-4" />
+              Confidential booking
+            </div>
           </div>
         </div>
 
